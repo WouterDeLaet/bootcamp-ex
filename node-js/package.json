@@ -9,7 +9,9 @@
     "build:prod": "webpack --mode=production",
     "build:babel": "babel ./src -d ./build",
     "start:watch": "nodemon --exec babel-node src/index.js",
-    "start": "node ./build/index.js"
+    "start": "node ./build/index.js",
+    "format": "prettier --write \"**/*.{js,json,css}\"",
+    "lint": "eslint \"./src/**/*.js\""
   },
   "keywords": [],
   "author": "",
@@ -22,8 +24,14 @@
     "@babel/plugin-proposal-numeric-separator": "^7.2.0",
     "@babel/preset-env": "^7.6.0",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.4.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
     "nodemon": "^1.19.2",
+    "prettier": "^1.18.2",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9"
-  }
+  },
+  "browserslist": "> 0.25%, not dead"
 }
