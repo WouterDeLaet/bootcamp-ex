@@ -5,9 +5,10 @@ const person = {
 
 // object spread not supported by node 6
 const otherPerson = { ...person, age: 20 };
-// const bigNumber = 123_234_234;
+const bigNumber = 123_234_234;
 
 console.log(otherPerson);
+console.log(bigNumber);
 
 const name = 'Freddy';
 if (typeof name === 'string');
@@ -19,4 +20,4 @@ if (!('serviceWorker' in navigator)) {
 const greeting = 'hello';
 console.log(`${greeting}world!`);
 
-[(1, 2, 3)].forEach((x) => console.log(x));
+[(1, 2, 3)].forEach(x => console.log(x));

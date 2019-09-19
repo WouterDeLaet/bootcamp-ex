@@ -1,11 +1,10 @@
 {
-  "extends": [
-    "airbnb-base",
-    "prettier"
-  ],
+  "extends": ["airbnb-base", "prettier"],
   "parserOptions": {
     "ecmaVersion": 2018
   },
+
+  "parser": "babel-eslint",
 
   "env": {
     "node": true,
