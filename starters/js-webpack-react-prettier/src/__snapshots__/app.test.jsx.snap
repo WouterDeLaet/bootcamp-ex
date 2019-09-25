@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App it renders as expected 1`] = `
+<div>
+  <h1>
+    <img
+      alt="JS Logo"
+      height="100"
+      src="public/images/js-logo.png"
+    />
+    <span
+      data-testid="welcome-message"
+    >
+      Hello from ES2015+
+    </span>
+  </h1>
+  <div
+    class="main container-fluid"
+  />
+</div>
+`;

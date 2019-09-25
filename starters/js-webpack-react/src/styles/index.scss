@@ -1,0 +1,20 @@
+// Uncomment if you want bootstrap
+// @import "bootstrap-scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: gray;
+}
+
+#root {
+  background: white;
+  h1 {
+    margin-top: 0;
+    display: flex;
+    span {
+      margin: auto 10px;
+    }
+  }
+}
