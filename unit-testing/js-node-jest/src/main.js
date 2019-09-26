@@ -1,3 +1,4 @@
+import request from 'request';
 import { sum, subtract } from './calc';
 
 console.log(sum(1, 2));
@@ -21,4 +22,19 @@ export function countDown(arg, timeout, count, cb) {
       countDown(arg, timeout, count - 1, cb);
     }, timeout);
   }
+}
+
+export function httpGet(url) {
+  return new Promise((resolve, reject) => {
+    request.get(url, (err, res) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      const extendedRes = Object.assign(res, {
+        data: JSON.parse(res.body),
+      });
+      resolve(extendedRes);
+    });
+  });
 }

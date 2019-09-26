@@ -1,4 +1,5 @@
-import { setTimerP, countDown } from './main';
+import request from 'request';
+import { setTimerP, countDown, httpGet } from './main';
 
 describe('test', () => {
   describe('setTimerP', () => {
@@ -39,5 +40,28 @@ describe('test', () => {
         initialCount--;
       });
     });
+  });
+
+  it('should return the response.', async () => {
+    // arrange
+    const url = 'http://www.swapi.com';
+    const res = {
+      name: 'Luke Skywalker',
+      homePlanet: 'Tatoeni',
+    };
+    const responseData = {
+      body: JSON.stringify(res),
+    };
+    const mockGet = jest.spyOn(request, 'get').mockImplementation((_url, cb) => {
+      cb(null, responseData);
+    });
+    // const mokCall = jest.spyOn(request, 'get').mockImplementation(() => Promise.resolve(responseData));
+
+    // act
+    const response = await httpGet(url);
+
+    // assert
+    expect(mockGet).toBeCalledWith(url, expect.any(Function));
+    expect(response).toEqual(responseData);
   });
 });
